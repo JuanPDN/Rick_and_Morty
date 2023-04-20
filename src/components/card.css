@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+.card-container {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px 10px 0px 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: radial-gradient(circle, rgba(0, 255, 61, 1) 16%, rgba(58, 221, 50, 1) 52%, rgba(65, 131, 65, 1) 98%);
+    max-width: 19rem;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transition: 410ms;
+    box-shadow: 0 0 32px rgb(0, 255, 38);
+    transform: scale(1.07);
+    z-index: 3;
+}
+
+.character-info {
+    background: radial-gradient(circle, rgba(0, 255, 61, 1) 0%, rgba(69, 167, 64, 1) 24%, rgba(63, 140, 63, 1) 46%);
+    font-family: 'Rubik Wet Paint', cursive;
+    color: rgba(255, 255, 255, 0.775);
+    font-size: 1rem;
+    background-color: rgb(11, 12, 11);
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    bottom: 250px;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.card:hover~.character-info {
+
+    transition: 400ms;
+    transform: translateY(260px);
+    visibility: visible;
+}
+
+.character-name {
+    display: flex;
+    justify-content: center;
+    color: rgb(54, 108, 54);
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 2rem;
+    margin-top: 0px;
+}
+
+.image-card {
+    border-radius: 50%;
+    max-width: 100%;
+    padding: 25px;
+}
