@@ -3,7 +3,7 @@
 .card-container {
     max-width: 100%;
     border-radius: 5px;
-    margin: 20px 10px 0px 10px;
+    margin: 50px 10px 0px 10px;
 }
 
 .card {
@@ -37,7 +37,6 @@
 }
 
 .card:hover~.character-info {
-
     transition: 400ms;
     transform: translateY(260px);
     visibility: visible;
