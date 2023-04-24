@@ -1,30 +1,33 @@
+import { useState } from 'react';
 import './App.css';
-//import Card from './components/Card';
 import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import characters from './data.js';
+import Nav from './components/Nav';
+import axios from 'axios';
 
 function App() {
-   function onSearch (characterID) {
-      window.alert(characterID)
+   const [characters, setCharacters] = useState([])
+   function onSearch(id) {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
+      });
    }
+
+   function onClose(id) {
+      setCharacters([
+         ...characters.filter((character) => character.id !== parseInt(id))
+      ])
+   }
+
    return (
       <div >
-         <SearchBar onSearch={onSearch} />
-         {/* <Card 
-         name = {Rick.name}
-         status = {Rick.status}
-         species = {Rick.species}
-         gender = {Rick.gender}
-         origin = {Rick.origin}
-         image = {Rick.image}
-         onClose={()=>{
-            window.alert('Cerrar')
-         }}
-         /> */}
-         <Cards characters = {characters}/>
+         <Nav onSearch={onSearch} />
+         <Cards characters={characters} onClose={onClose} />
 
-         
+
       </div>
    );
 }

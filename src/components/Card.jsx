@@ -1,11 +1,10 @@
 import './card.css'
 
-export default function Card({ name, status, species, gender, origin, image }) {
+export default function Card({id, name, status, species, gender, origin, image, onClose }) {
    return (
       <div className="card-container">
          <div className='card'>
-
-            <button onClick={() => { window.alert('Cerrar') }}>X</button>
+            <button onClick={() => onClose(id)}>X</button>
             <img className='image-card' src={image} alt={name} />
             <p className='character-name'>{name}</p>
          </div>
