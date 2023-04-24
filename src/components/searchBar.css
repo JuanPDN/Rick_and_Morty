@@ -2,8 +2,8 @@
 
 .nav-bar {
     display: flex;
-    justify-content:flex-end;
-    background: radial-gradient(circle, rgba(0,255,61,1) 0%, rgba(69,167,64,1) 24%, rgba(63,140,63,1) 46%);
+    justify-content: flex-end;
+    background: radial-gradient(circle, rgba(0, 255, 61, 1) 0%, rgba(69, 167, 64, 1) 24%, rgba(63, 140, 63, 1) 46%);
     padding: 1rem;
     margin-bottom: 5px;
     position: fixed;
@@ -14,12 +14,12 @@
 }
 
 .nav-bar input {
-    margin-right: 12px;
+    margin: auto 12px;
     border-radius: 5px;
     padding: 5px;
 }
 
-.nav-bar button {
+.btn-agregar {
     font-family: 'Rubik Wet Paint', cursive;
     background-color: rgba(0, 255, 61, 1);
     text-align: center;
@@ -31,7 +31,24 @@
     transition: all .4s;
 }
 
-.nav-bar button:hover  {
+.btn-agregar:hover {
     scale: 1.07;
     box-shadow: 0 0 32px rgb(0, 255, 38);
 }
+
+.btn-random {
+    font-family: 'Rubik Wet Paint', cursive;
+    background-color:aquamarine;
+    text-align: center;
+    color: #356133;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 200;
+    transition: all .4s;
+}
+.btn-random:hover {
+    scale: 1.07;
+    box-shadow: 0 0 32px rgb(71, 224, 238);
+}
+
