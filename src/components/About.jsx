@@ -1,7 +1,9 @@
+import './about.css'
+
 function About() {
     return ( 
-        <div>
-            Hola soy about
+        <div className='about'>
+            <h1>about</h1>
         </div>
      );
 }
