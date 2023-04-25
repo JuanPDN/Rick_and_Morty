@@ -3,11 +3,12 @@ import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav';
 import axios from 'axios';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
    const [characters, setCharacters] = useState([])
    function onSearch(id) {
-      if ((characters.filter((character) => character.id === parseInt(id))).length === 0) {        
+      if ((characters.filter((character) => character.id === parseInt(id))).length === 0) {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
@@ -28,10 +29,11 @@ function App() {
 
    return (
       <div >
-         <Nav onSearch={onSearch} />
-         <Cards characters={characters} onClose={onClose} />
-
-
+            <Nav onSearch={onSearch} />
+         <Routes>
+            <Route path='/' element={<Cards characters={characters} onClose={onClose} />}/>
+            
+         </Routes>
       </div>
    );
 }

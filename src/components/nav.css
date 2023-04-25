@@ -1,0 +1,29 @@
+button {
+    font-family: 'Rubik Wet Paint', cursive;
+    background-color: rgba(0, 255, 61, 1);
+    text-align: center;
+    margin: auto 5px;
+    color: #356133;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 200;
+    transition: all .4s;
+}
+
+button:hover {
+    scale: 1.07;
+    box-shadow: 0 0 32px rgb(0, 255, 38);
+}
+input {
+    margin: auto 5px;
+    border-radius: 5px;
+    padding: 5px;
+}    
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: radial-gradient(circle, rgba(0, 255, 61, 1) 0%, rgba(69, 167, 64, 1) 24%, rgba(63, 140, 63, 1) 46%);
+    padding: 1rem;
+}

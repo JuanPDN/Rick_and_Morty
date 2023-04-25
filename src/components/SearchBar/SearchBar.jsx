@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch }) {
       return Math.floor((Math.random() * (860 - 1 + 1)) + 1)
   }
    return (
-      <div className='nav-bar'>
+      <div>
          <nav>
             <button className='btn-random' onClick={()=> onSearch(random())}>Random</button>
             <input type="text" onChange={handleChange} value={id} />
