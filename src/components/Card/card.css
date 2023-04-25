@@ -37,10 +37,6 @@
     margin: 20px auto;
     transition: all 0.3s ease;
 }
-
-.card {
-    position: relative;
-}
 .character-info {
     font-family: var(--font-RyM);
     color: #fff;
@@ -53,7 +49,6 @@
     opacity: 1;
     scale: 1.07;
 }
-
 .character-name {
     font-family: var(--font-RyM);
     font-size: 1.5rem;

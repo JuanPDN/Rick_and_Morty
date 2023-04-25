@@ -1,6 +1,6 @@
 .container-cards {
     position: relative;
-    top: 90px;
+    top: 70px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     grid-auto-rows: 550px;
