@@ -1,4 +1,4 @@
-import './card.css'
+import '../Card/card.css'
 
 export default function Card({id, name, status, species, gender, origin, image, onClose }) {
    return (

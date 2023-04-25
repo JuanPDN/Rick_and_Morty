@@ -7,7 +7,7 @@
     --font-RyM: 'Rubik Wet Paint', cursive;
 }
 .card-container {
-    height: 350px;
+    height: 370px;
     width: 245px;
     overflow: hidden;
     margin: auto;
@@ -20,7 +20,7 @@
     background: var(--bg-card);
 }
 .card-container:hover {
-    height: 520px;
+    height: 570px;
     width: 245px;
     box-shadow: var(--box-card);
 }

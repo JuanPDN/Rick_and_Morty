@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Cards from './components/Cards.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav';
 import axios from 'axios';
 
