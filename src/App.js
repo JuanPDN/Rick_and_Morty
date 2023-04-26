@@ -5,12 +5,15 @@ import axios from 'axios';
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
-import About from './components/About.jsx';
+import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 
-function App(props) {
+function App() {
    const [characters, setCharacters] = useState([])
    function onSearch(id) {
+      if (id > 860) {
+         window.alert('¡No hay personajes con este ID!')
+      }
       if ((characters.filter((character) => character.id === parseInt(id))).length === 0) {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
@@ -19,7 +22,9 @@ function App(props) {
                window.alert('¡No hay personajes con este ID!');
             }
          });
-      } else {
+      }
+
+      else {
          window.alert('¡Ya existe un personaje con este ID!');
       }
    }

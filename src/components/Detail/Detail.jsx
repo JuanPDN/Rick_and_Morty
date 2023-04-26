@@ -26,7 +26,6 @@ function Detail() {
             <div className='container'>
 
                 <div className='header'>
-                    {console.log(character)}
                     <h1>
                         {character.name}
                     </h1>
