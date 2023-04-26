@@ -8,7 +8,7 @@ import Nav from './components/Nav/Nav.jsx';
 import About from './components/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 
-function App() {
+function App(props) {
    const [characters, setCharacters] = useState([])
    function onSearch(id) {
       if ((characters.filter((character) => character.id === parseInt(id))).length === 0) {
