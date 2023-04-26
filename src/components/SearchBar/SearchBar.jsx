@@ -15,7 +15,7 @@ export default function SearchBar({ onSearch }) {
    return (
       <div>
          <nav>
-            <button className='btn-random' onClick={()=> onSearch(random())}>Random</button>
+            <button className='btn-blue' onClick={()=> onSearch(random())}>Random</button>
             <input type="text" onChange={handleChange} value={id} />
             <button className='btn-agregar' onClick={() => onSearch(id)} type="input">Agregar</button>
          </nav>

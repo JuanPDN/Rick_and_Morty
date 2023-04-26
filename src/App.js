@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
@@ -8,6 +8,8 @@ import Nav from './components/Nav/Nav.jsx';
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import NotFound from './components/NotFound/Error';
+import Form from './components/Form/Form';
+
 
 function App() {
    const [characters, setCharacters] = useState([])
@@ -36,14 +38,19 @@ function App() {
       ])
    }
 
+   const { pathname } = useLocation();
+   
+   
+
    return (
       <div >
-         <Nav onSearch={onSearch} />
+         {pathname !== '/' &&  <Nav onSearch={onSearch} />} 
          <Routes>
-            <Route path='/' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/' element={<Form />} />
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
-            <Route path='*' element={<NotFound/>}/>
+            <Route path='*' element={<NotFound />} />
          </Routes>
       </div>
    );

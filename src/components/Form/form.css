@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(217, 214, 214, 0.8);
+    border-radius: 5%;
+    padding: 25px;
+    width: 300px;
+    height: 500px;
+    font-weight: bolder;
+}
+
+.form input {
+    margin-bottom: 20px;
+    width: 70%;
+    padding: 7px;
+}
+
+.container-form {
+    background: url(./DWMLHZSLTZB2VARS5777M3L4ZM.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.image-form {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}

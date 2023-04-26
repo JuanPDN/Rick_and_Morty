@@ -22,7 +22,8 @@ function Detail() {
         return setCharacter({});
     }, [id]);
 
-    if (id > 860 || id < 1) {
+
+    if (id > 860 || id < 1 ){
         return (
             <NotFound />
         )

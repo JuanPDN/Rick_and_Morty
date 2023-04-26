@@ -10,7 +10,7 @@ function Nav({ onSearch }) {
                 <button>About</button>
             </NavLink>
 
-            <NavLink to='/'>
+            <NavLink to='/home'>
                 <button>Home</button>
             </NavLink>
 

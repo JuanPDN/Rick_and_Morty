@@ -8,6 +8,6 @@ const container = document.getElementById('root')
 
 createRoot(container).render(
   <BrowserRouter>
-  <App />,
+  <App />
   </BrowserRouter>
 )

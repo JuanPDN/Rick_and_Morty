@@ -18,7 +18,7 @@
     box-shadow: 0 0 32px rgb(0, 255, 38);
 }
 
-.btn-random {
+.btn-blue {
     font-family: 'Rubik Wet Paint', cursive;
     background-color:aquamarine;
     text-align: center;
@@ -29,7 +29,7 @@
     font-size: 200;
     transition: all .4s;
 }
-.btn-random:hover {
+.btn-blue:hover {
     scale: 1.07;
     box-shadow: 0 0 32px rgb(71, 224, 238);
 }
