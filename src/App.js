@@ -7,6 +7,7 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
+import NotFound from './components/NotFound/Error';
 
 function App() {
    const [characters, setCharacters] = useState([])
@@ -42,6 +43,7 @@ function App() {
             <Route path='/' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
+            <Route path='*' element={<NotFound/>}/>
          </Routes>
       </div>
    );

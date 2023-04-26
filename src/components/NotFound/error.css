@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Julee&family=Rubik+Wet+Paint&family=Sigmar+One&display=swap');
+
+.error {
+    position: fixed;
+    background: url('./rick-y-morty-portal-dimensional-6603.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bowlby One SC', cursive;
+    color: white;
+    font-size: 50px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
