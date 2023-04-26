@@ -2,12 +2,14 @@ import '../Detail/detail.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import NotFound from '../NotFound/Error';
 
 
 function Detail() {
 
     const { id } = useParams()
     const [character, setCharacter] = useState({})
+
 
     useEffect(() => {
         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -20,27 +22,32 @@ function Detail() {
         return setCharacter({});
     }, [id]);
 
+    if (id > 860 || id < 1) {
+        return (
+            <NotFound />
+        )
+    } else {
+        return (
+            <div className="detail">
+                <div className='container'>
 
-    return (
-        <div className="detail">
-            <div className='container'>
-
-                <div className='header'>
-                    <h1>
-                        {character.name}
-                    </h1>
-                    <img src={character.image} alt={character.name} />
+                    <div className='header'>
+                        <h1>
+                            {character.name}
+                        </h1>
+                        <img src={character.image} alt={character.name} />
+                    </div>
+                    <ul>
+                        <li>Status: {character.status}</li>
+                        <li>Gender: {character.gender}</li>
+                        <li>Specie: {character.species}</li>
+                        <li>Origin: {character.origin?.name}</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li>Status: {character.status}</li>
-                    <li>Gender: {character.gender}</li>
-                    <li>Specie: {character.species}</li>
-                    <li>Origin: {character.origin?.name}</li>
-                </ul>
-            </div>
 
-        </div>
-    );
+            </div>
+        );
+    }
 }
 
 export default Detail;

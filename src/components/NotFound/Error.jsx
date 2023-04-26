@@ -4,7 +4,7 @@ function NotFound() {
     return (
         <div className='error'>
             <h1>
-                404 NOT FOUND
+                404. NOT FOUND
             </h1>
         </div>
     );
