@@ -13,6 +13,9 @@ import Form from './components/Form/Form';
 
 function App() {
    const [characters, setCharacters] = useState([])
+   const [access, setAcces] = useState({
+      
+   })
 
    function onSearch(id) {
       if (id > 860) {
