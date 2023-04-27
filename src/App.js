@@ -39,12 +39,12 @@ function App() {
    }
 
    const { pathname } = useLocation();
-   
-   
+
+
 
    return (
       <div >
-         {pathname !== '/' &&  <Nav onSearch={onSearch} />} 
+         {pathname !== '/' ? <Nav onSearch={onSearch} /> : null}
          <Routes>
             <Route path='/' element={<Form />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
