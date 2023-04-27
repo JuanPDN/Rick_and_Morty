@@ -7,12 +7,13 @@
     border-radius: 5%;
     padding: 25px;
     width: 300px;
-    height: 500px;
+    height: 450px;
     font-weight: bolder;
 }
 
 .form input {
     margin-bottom: 20px;
+    margin-top: 5px;
     width: 70%;
     padding: 7px;
 }
@@ -30,4 +31,19 @@
 .image-form {
     border-radius: 50%;
     margin-bottom: 20px;
+}
+
+.errors {
+    color: red;
+    font-size: 10px;
+    margin: 0px;
+    position: relative;
+    top: -15px;
+    width: 70%;
+}
+
+form button {
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
 }

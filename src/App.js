@@ -13,6 +13,7 @@ import Form from './components/Form/Form';
 
 function App() {
    const [characters, setCharacters] = useState([])
+
    function onSearch(id) {
       if (id > 860) {
          window.alert('¡No hay personajes con este ID!')
