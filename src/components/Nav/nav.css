@@ -15,11 +15,13 @@ button:hover {
     scale: 1.07;
     box-shadow: 0 0 32px rgb(0, 255, 38);
 }
+
 input {
     margin: auto 5px;
     border-radius: 5px;
     padding: 5px;
-}    
+}
+
 .nav-bar {
     display: flex;
     justify-content: flex-end;
@@ -35,4 +37,5 @@ input {
 .nav-bar .btn-red {
     position: absolute;
     left: 20px;
+    top: 20px;
 }
