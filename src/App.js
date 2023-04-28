@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
@@ -14,7 +14,8 @@ import Form from './components/Form/Form';
 function App() {
 
    const [characters, setCharacters] = useState([])
-   const [access, setAcces] = useState(false)
+   const [access, setAccess] = useState(false)
+   const navigate = useNavigate();
    const EMAIL = 'juan@juan.com';
    const PASSWORD = 'juan123';
 
@@ -43,15 +44,28 @@ function App() {
       ])
    }
 
+   function login(userData) {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }
+   }
+
+   function logOut () {
+      setAccess(false)
+   }
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
    const { pathname } = useLocation();
-
-
 
    return (
       <div >
-         {pathname !== '/' ? <Nav onSearch={onSearch} /> : null}
+         {pathname !== '/' ? <Nav onSearch={onSearch} logOut = {logOut} /> : null}
          <Routes>
-            <Route path='/' element={<Form />} />
+            <Route path='/' element={<Form login={login} />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />

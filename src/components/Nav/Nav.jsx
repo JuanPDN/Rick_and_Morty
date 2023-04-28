@@ -3,9 +3,10 @@ import SearchBar from '../SearchBar/SearchBar.jsx'
 import '../Nav/nav.css'
 
 
-function Nav({ onSearch }) {
+function Nav({ onSearch, logOut }) {
     return (
         <div className="nav-bar">
+            <button className="btn-red" onClick={logOut}>logOut</button>
             <NavLink to='/about'>
                 <button>About</button>
             </NavLink>

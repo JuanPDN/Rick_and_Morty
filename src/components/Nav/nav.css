@@ -31,3 +31,8 @@ input {
     width: 98%;
     z-index: 1;
 }
+
+.nav-bar .btn-red {
+    position: absolute;
+    left: 20px;
+}

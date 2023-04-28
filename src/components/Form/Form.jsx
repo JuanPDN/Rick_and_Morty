@@ -3,7 +3,7 @@ import imgen from './images.jpeg'
 import './form.css'
 import Validate from './validation';
 
-function Form() {
+function Form({ login }) {
 
     const [userData, setUserData] = useState({
         email: '',
@@ -26,6 +26,11 @@ function Form() {
         }))
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        login(userData)
+    }
+
     return (
         <div className='container-form'>
             <form className="form">
@@ -37,11 +42,12 @@ function Form() {
                         <p className='errors'>{errors.long}</p>}
                 <label>Password</label>
                 <input type="password" placeholder='Password' name='password' onChange={handleChange} value={userData.password}></input>
-                {   errors.badLong ? <p className='errors'>{ errors.badLong}</p>:
-                    <p className='errors'>{ errors.pass}</p>
-                    }
-                    <button className={Object.keys(errors).length===0 ? 'btn-blue': 'btn-blue hide'}>Submit</button>
-                
+                {errors.badLong ? <p className='errors'>{errors.badLong}</p> :
+                    <p className='errors'>{errors.pass}</p>
+                }
+                <button type='submit' className={Object.keys(errors).length === 0 ? 'btn-blue' :
+                    'btn-blue hide'} onClick={handleSubmit} >Submit</button>
+
             </form>
         </div>
     );
