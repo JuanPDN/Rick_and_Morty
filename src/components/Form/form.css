@@ -43,7 +43,7 @@
 }
 
 .hide {
-    opacity: 0;
+    visibility: hidden;
 }
 
 form button {

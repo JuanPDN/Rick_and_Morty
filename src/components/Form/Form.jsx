@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import imgen from './images.jpeg'
 import './form.css'
-import { valEmail, valPass } from './validation';
+import Validate from './validation';
 
 function Form() {
 
@@ -20,7 +20,7 @@ function Form() {
             ...userData,
             [event.target.name]: event.target.value
         })
-        setErrors(valEmail({
+        setErrors(Validate({
             ...userData,
             [event.target.name]: event.target.value
         }))
