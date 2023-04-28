@@ -12,25 +12,29 @@ const errorsPass = {
     badLong: 'la contraseña tiene que tener una longitud entre 6 y 10 caracteres'
 }
 
-export function valEmail(email) {
+export function valEmail({email , password}) {
+    console.log(email);
+    console.log(password);
+    const error = {}
     if (email.length > 35) {
-        return errorsMail.tooLong
+        error.long = errorsMail.tooLong
     }
     if (email.length === 0) {
-        return errorsMail.empty
+        error.empty = errorsMail.empty
     }
     if (validateEmail.test(email) === false) {
-        return errorsMail.invalidate
+        error.email = errorsMail.invalidate
     }
-}
-
-export function valPass (password) {
     if (password.length < 6 || password.length > 10){
-        return errorsPass.badLong
+        error.badLong = errorsPass.badLong
     }
     if(!validatePass.test(password)){
-        return errorsPass.invalidate
+        error.pass = errorsPass.invalidate
     }
+    return error
+}
+
+export function valPass ({password}) {
 }
 
 

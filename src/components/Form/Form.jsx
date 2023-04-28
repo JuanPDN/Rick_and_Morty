@@ -9,17 +9,21 @@ function Form() {
         email: '',
         password: ''
     })
-    const [errors, setErrors] = useState({})
+
+    const [errors, setErrors] = useState({
+        email: '',
+        password: ''
+    })
 
     function handleChange(event) {
         setUserData({
             ...userData,
             [event.target.name]: event.target.value
         })
-        setErrors({
-            ...errors,
+        setErrors(valEmail({
+            ...userData,
             [event.target.name]: event.target.value
-        })
+        }))
     }
 
     return (
@@ -28,11 +32,16 @@ function Form() {
                 <img src={imgen} alt="imagen-form" className='image-form' />
                 <label>Email</label>
                 <input type="email" placeholder='Email' name='email' onChange={handleChange} value={userData.email} />
-                {errors.email && <p className='errors'>{valEmail(errors.email)}</p>}
+                {errors.empty ? <p className='errors'>{errors.empty}</p>
+                    : errors.email ? <p className='errors'>{errors.email}</p> :
+                        <p className='errors'>{errors.long}</p>}
                 <label>Password</label>
                 <input type="password" placeholder='Password' name='password' onChange={handleChange} value={userData.password}></input>
-                {errors.password && <p className='errors'>{valPass(errors.password)}</p>}
-                <button className='btn-blue'>Submit</button>
+                {   errors.badLong ? <p className='errors'>{ errors.badLong}</p>:
+                    <p className='errors'>{ errors.pass}</p>
+                    }
+                    <button className={Object.keys(errors).length===0 ? 'btn-blue': 'btn-blue hide'}>Submit</button>
+                
             </form>
         </div>
     );
