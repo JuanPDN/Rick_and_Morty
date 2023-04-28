@@ -12,11 +12,11 @@ import Form from './components/Form/Form';
 
 
 function App() {
+
    const [characters, setCharacters] = useState([])
-   const [access, setAcces] = useState({
-      EMAIL: 'juan@juan.com',
-      PASSWORD: 'juan123'
-   })
+   const [access, setAcces] = useState(false)
+   const EMAIL = 'juan@juan.com';
+   const PASSWORD = 'juan123';
 
    function onSearch(id) {
       if (id > 860) {
