@@ -6,7 +6,11 @@ import '../Nav/nav.css'
 function Nav({ onSearch, logOut }) {
     return (
         <div className="nav-bar">
-            <button className="btn-red" onClick={logOut}>logOut</button>
+
+            <NavLink to='/'>
+                <button className="btn-red" onClick={logOut}>logOut</button>
+            </NavLink>
+
             <NavLink to='/about'>
                 <button>About</button>
             </NavLink>
