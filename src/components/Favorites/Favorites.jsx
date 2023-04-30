@@ -1,8 +1,10 @@
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { removeFav } from "../../redux/action";
 
-function Favorites({ myFavorites, removeFav }) {
+function Favorites({ removeFav }) {
+
+    const myFavorites = useSelector((state)=> state.myFavorites)
 
 
     return (
@@ -24,11 +26,11 @@ function Favorites({ myFavorites, removeFav }) {
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        myFavorites: state.myFavorites
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         myFavorites: state.myFavorites
+//     }
+// }
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -37,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(null, mapDispatchToProps)(Favorites);
