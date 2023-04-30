@@ -3,9 +3,13 @@ import SearchBar from '../SearchBar/SearchBar.jsx'
 import '../Nav/nav.css'
 
 
-function Nav({ onSearch, logOut }) {
+export default function Nav({ onSearch, logOut }) {
     return (
         <div className="nav-bar">
+
+            <NavLink to='/favorites'>
+                <button className="btn-blue">Favorites</button>
+            </NavLink>
 
             <NavLink to='/'>
                 <button className="btn-red" onClick={logOut}>logOut</button>
@@ -24,4 +28,3 @@ function Nav({ onSearch, logOut }) {
     );
 }
 
-export default Nav;

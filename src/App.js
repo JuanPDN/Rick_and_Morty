@@ -9,6 +9,7 @@ import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import NotFound from './components/NotFound/Error';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
       }
    }
 
-   function logOut () {
+   function logOut() {
       setAccess(false)
    }
 
@@ -63,9 +64,10 @@ function App() {
 
    return (
       <div >
-         {pathname !== '/' ? <Nav onSearch={onSearch} logOut = {logOut} /> : null}
+         {pathname !== '/' ? <Nav onSearch={onSearch} logOut={logOut} /> : null}
          <Routes>
             <Route path='/' element={<Form login={login} />} />
+            <Route path='/favorites' element={<Favorites />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
