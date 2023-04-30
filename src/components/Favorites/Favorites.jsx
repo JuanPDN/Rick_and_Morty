@@ -6,7 +6,6 @@ function Favorites({ removeFav }) {
 
     const myFavorites = useSelector((state)=> state.myFavorites)
 
-
     return (
         <div className="container-cards">
             {myFavorites.map((character) =>
