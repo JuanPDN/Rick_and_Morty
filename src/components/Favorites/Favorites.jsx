@@ -1,10 +1,16 @@
-import { connect, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { removeFav } from "../../redux/action";
-
-function Favorites({ removeFav }) {
+export default function Favorites() {
 
     const myFavorites = useSelector((state)=> state.myFavorites)
+    const dispatch = useDispatch()
+
+
+        const remove = (id) => {
+            dispatch(removeFav(id))
+        }
+
 
     return (
         <div className="container-cards">
@@ -18,7 +24,7 @@ function Favorites({ removeFav }) {
                     gender={character.gender}
                     origin={character.origin.name}
                     image={character.image}
-                    onClose={removeFav}
+                    onClose={remove}
                 />
             )}
         </div>
@@ -32,10 +38,10 @@ function Favorites({ removeFav }) {
 // }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        removeFav: (id) => dispatch (removeFav(id))
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         removeFav: (id) => dispatch (removeFav(id))
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(Favorites);
+// export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
