@@ -1,0 +1,9 @@
+.fillters {
+    position: relative;
+    display: flex;
+    top: 55px;
+    justify-content:flex-start;
+    padding: 10px;
+    background-color: rgba(117, 242, 101, 0.7);
+    gap: 50px; 
+}
