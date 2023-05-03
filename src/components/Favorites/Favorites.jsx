@@ -32,10 +32,11 @@ export default function Favorites() {
                     <option value="D">Descendente</option>
                 </select>
                 <select onChange={handleFilter}>
+                    <option value="All">All</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
-                    <option value="unknow">unknow</option>
+                    <option value="unknown">unknown</option>
                 </select>
             </div >
             <div className="container-cards">

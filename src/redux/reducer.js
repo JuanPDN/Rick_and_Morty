@@ -21,20 +21,26 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 allCharacters: [...state.allCharacters.filter(((fav) => fav.id !== Number(payload)))]
             }
         case FILTER:
-            return {
-                ...state,
-                myFavorites: [...state.allCharacters.filter((fav) => fav.gender === payload)],
+            if (payload === "All") {
+                return {
+                    ...state,
+                    myFavorites: state.allCharacters}
+            } else {
+                return {
+                    ...state,
+                    myFavorites: [...state.allCharacters.filter((fav) => fav.gender === payload)],
+                }
             }
 
         case ORDER:
             return {
                 ...state,
                 myFavorites: state.allCharacters.sort((a, b) => {
-                    if (a.id > b.id){
-                        return 'A' === payload ? 1 : -1 
+                    if (a.id > b.id) {
+                        return 'A' === payload ? 1 : -1
                     }
-                    if (a.id < b.id){
-                        return 'D' === payload ? 1 : -1 
+                    if (a.id < b.id) {
+                        return 'D' === payload ? 1 : -1
                     }
                     return 0
                 })
