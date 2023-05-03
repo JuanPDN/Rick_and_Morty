@@ -3,13 +3,13 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
-import Cards from './components/Cards/Cards.jsx';
-import Nav from './components/Nav/Nav.jsx';
-import About from './components/About/About.jsx';
-import Detail from './components/Detail/Detail.jsx';
-import NotFound from './components/NotFound/Error';
-import Form from './components/Form/Form';
-import Favorites from './components/Favorites/Favorites';
+import Cards from '../components/Cards/Cards.js';
+import Nav from '../components/Nav/Nav.js';
+import About from '../components/About/About.js';
+import Detail from '../components/Detail/Detail.js';
+import NotFound from '../components/NotFound/Error';
+import Form from '../components/Form/Form';
+import Favorites from '../components/Favorites/Favorites';
 
 
 function App() {
