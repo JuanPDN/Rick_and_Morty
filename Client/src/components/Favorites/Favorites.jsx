@@ -26,7 +26,7 @@ export default function Favorites() {
 
     return (
         <div>
-            <div className="fillters">
+            <div className="filters">
                 <select onChange={handleOrder}>
                     <option value="A">Ascendente</option>
                     <option value="D">Descendente</option>
