@@ -10,5 +10,7 @@ http.createServer((req, res)=>{
     if(req.url.includes ('/rickandmorty/character')){
         const id = req.url.split('/').at(-1)
         let characterFilter = characters.filter((character) => character.id === Number(id))
+        res.writeHead( 200 , {'content-type': 'application/json'})
+        res.end(JSON.stringify(characterFilter ))
     }
 }).listen(PORT, 'localhost')
