@@ -1,9 +1,6 @@
 const express = require('express')
 const server = express()
-const getCharById = require('./routes/index')
-const login = require('./routes/index')
-const postFav = require('./routes/index')
-const deleteFav = require('./routes/index')
+const router = require('./routes/index')
 
 
 server.use(express.json())
@@ -22,10 +19,8 @@ server.use((req, res, next) => {
 });
 
 
-server.use('/rickandmorty', getCharById)
-server.use('/rickandmorty', login)
-server.use('/rickandmorty',postFav)
-server.use('/rickandmorty', deleteFav)
+server.use('/rickandmorty', router)
+
 
 
 

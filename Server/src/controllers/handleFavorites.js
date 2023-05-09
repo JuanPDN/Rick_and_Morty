@@ -1,4 +1,26 @@
-let myFavorites = []
+let myFavorites = [{
+	"id": 1,
+	"name": "Mariel Carolina",
+	"gender": "Female",
+	"species": "Human",
+	"origin": {
+		"name": "unknown",
+		"url": ""
+	},
+	"image": "https://rickandmortyapi.com/api/character/avatar/345.jpeg",
+	"status": "Alive"
+},{
+	"id": 2,
+	"name": "Jua Pablo",
+	"gender": "Female",
+	"species": "Human",
+	"origin": {
+		"name": "unknown",
+		"url": ""
+	},
+	"image": "https://rickandmortyapi.com/api/character/avatar/345.jpeg",
+	"status": "Alive"
+}]
 
 const postFav = (req, res) => {
     const character = req.body
@@ -9,9 +31,8 @@ const postFav = (req, res) => {
 
 const deleteFav = (req, res) => {
     const {id} = req.params 
-    myFavorites.filter((myfavorite)=>{
-        myfavorite.id !== Number(id)
-    })
+    myFavorites = myFavorites.filter((favorite)=> {
+        return favorite.id !== Number(id)})
     res.json({myFavorites})
 }
 
