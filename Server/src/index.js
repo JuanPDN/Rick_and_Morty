@@ -20,6 +20,8 @@ server.use((req, res, next) => {
     );
     next();
 });
+
+
 server.use('/rickandmorty', getCharById)
 server.use('/rickandmorty', login)
 server.use('/rickandmorty',postFav)
