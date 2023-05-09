@@ -9,22 +9,19 @@ export default function rootReducer(state = initialState, { type, payload }) {
     switch (type) {
         case ADD_FAV:
             return {
-                ...state,
-                myFavorites: [...state.myFavorites, payload],
-                allCharacters: [...state.myFavorites, payload]
-            }
-
+                ...state, myFavorites: payload, allCharacters: payload
+            };
         case REMOVE_FAV:
             return {
-                ...state,
-                myFavorites: [...state.allCharacters.filter(((fav) => fav.id !== Number(payload)))],
-                allCharacters: [...state.allCharacters.filter(((fav) => fav.id !== Number(payload)))]
-            }
+                ...state, myFavorites: payload
+            };
+
         case FILTER:
             if (payload === "All") {
                 return {
                     ...state,
-                    myFavorites: state.allCharacters}
+                    myFavorites: state.allCharacters
+                }
             } else {
                 return {
                     ...state,

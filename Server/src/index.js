@@ -1,8 +1,10 @@
 const express = require('express')
 const server = express()
 const router = require('./routes/index')
+const cors = require('cors')
 
 
+server.use(cors())
 server.use(express.json())
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
