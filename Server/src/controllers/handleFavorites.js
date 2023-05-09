@@ -1,26 +1,4 @@
-let myFavorites = [{
-	"id": 1,
-	"name": "Mariel Carolina",
-	"gender": "Female",
-	"species": "Human",
-	"origin": {
-		"name": "unknown",
-		"url": ""
-	},
-	"image": "https://rickandmortyapi.com/api/character/avatar/345.jpeg",
-	"status": "Alive"
-},{
-	"id": 2,
-	"name": "Jua Pablo",
-	"gender": "Female",
-	"species": "Human",
-	"origin": {
-		"name": "unknown",
-		"url": ""
-	},
-	"image": "https://rickandmortyapi.com/api/character/avatar/345.jpeg",
-	"status": "Alive"
-}]
+let myFavorites = []
 
 const postFav = (req, res) => {
     const character = req.body
