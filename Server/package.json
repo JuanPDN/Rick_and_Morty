@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "nodemon ./src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./src/index.js",
+    "test": "jest --detectOpenHandles"
   },
   "author": "Juan Pablo Delgado Nivia",
   "license": "ISC",
@@ -17,5 +17,9 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   }
 }
