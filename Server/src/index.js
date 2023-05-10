@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require ('express')
 const server = express()
 const router = require('./routes/index')
 const cors = require('cors')
