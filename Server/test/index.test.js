@@ -1,4 +1,4 @@
-const { server } = require('../src/app');
+const server  = require('../src/app');
 const session = require('supertest');
 const agent = session(server);
 
