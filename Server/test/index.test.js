@@ -81,7 +81,7 @@ describe('Test de RUTAS', () => {
             expect(response.body).toEqual(character)
         })
 
-        it('Cuando haya un personaje con el ID valido, debe retornar un array modifcado', async()=>{
+        it('Cuando haya un personaje con el ID valido, debe retornar un array modifcado', async () => {
             const response = await agent.delete('/rickandmorty/fav/1')
             expect(response.body).toEqual([character[1]])
         })
