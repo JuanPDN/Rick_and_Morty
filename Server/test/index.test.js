@@ -2,8 +2,33 @@ const { server } = require('../src/app');
 const session = require('supertest');
 const agent = session(server);
 
+const character = [{
+    "id": 1,
+    "name": "Rick Sanchez",
+    "gender": "Male",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (C-137)",
+        "url": "https://rickandmortyapi.com/api/location/1"
+    },
+    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+    "status": "Alive"
+}, {
+    "id": 2,
+    "name": "Morty Smith",
+    "gender": "Male",
+    "species": "Human",
+    "origin": {
+        "name": "unknown",
+        "url": ""
+    },
+    "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+    "status": "Alive"
+}]
 
 describe('Test de RUTAS', () => {
+
+
     describe('GET /rickandmorty/character/:id', () => {
         it('Responde con status: 200', async () => {
             await agent.get('/rickandmorty/character/1').expect(200)
@@ -40,14 +65,27 @@ describe('Test de RUTAS', () => {
 
     describe('POST /rickandmorty/fav', () => {
         it('lo que se envia por body deber ser devuelto en un array', async () => {
-            const response = await agent.post('/rickandmorty/fav').send({ arg1: 3, arg2: 7 })
-            expect(response.body).toEqual([{ arg1: 3, arg2: 7 }])
+            const response = await agent.post('/rickandmorty/fav').send(character[0])
+            expect(response.body).toEqual([character[0]])
         })
 
         it('Si  se vuelve a enviar un nuevo elemento por body, este debe ser devuelto en un arreglo que incluye un elemento enviado previamente.', async () => {
-            const response = await agent.post('/rickandmorty/fav').send({ arg1: 1, arg2: 2 })
-            expect(response.body).toEqual([{ arg1: 3, arg2: 7 }, { arg1: 1, arg2: 2 }])
+            const response = await agent.post('/rickandmorty/fav').send(character[1])
+            expect(response.body).toEqual(character)
         })
+    })
+
+    describe('DELETE /rickandmorty/fav/:id', () => {
+        it('En el caso de que no haya ningún personaje con el ID que se envia, debe devolver un array sin modificar', async () => {
+            const response = await agent.delete('/rickandmorty/fav/4')
+            expect(response.body).toEqual(character)
+        })
+
+        it('Cuando haya un personaje con el ID valido, debe retornar un array modifcado', async()=>{
+            const response = await agent.delete('/rickandmorty/fav/1')
+            expect(response.body).toEqual([character[1]])
+        })
+
     })
 
 })
