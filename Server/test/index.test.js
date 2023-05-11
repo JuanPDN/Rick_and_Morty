@@ -2,6 +2,7 @@ const { server } = require('../src/app');
 const session = require('supertest');
 const agent = session(server);
 
+
 describe('Test de RUTAS', () => {
     describe('GET /rickandmorty/character/:id', () => {
         it('Responde con status: 200', async () => {
@@ -17,8 +18,24 @@ describe('Test de RUTAS', () => {
             expect(response).toHaveProperty(['body', 'origin'])
             expect(response).toHaveProperty(['body', 'image'])
         })
-        it('Si hay un error responde con status: 500', async () => {
+        it('Si hay un error responde con status: 500',  async () => {
             await agent.get('/rickandmorty/character/9999').expect(500)
         })
     })
+
+    describe('GET /rickandmorty/login',()=>{
+        it('Debe retornar true si el password y el email son correctos',async()=>{
+            const response = await agent.get('/rickandmorty/login/?email=juan%40juan.com&password=juan123')
+            expect(response).toHaveProperty(['body','access'],true)
+        })
+        it('Debe retornar false si el password es incorrecto',async()=>{
+            const response = await agent.get('/rickandmorty/login/?email=juan%40juan.com&password=juan124')
+            expect(response).toHaveProperty(['body','access'],false)
+        })
+        it('Debe retornar false si el email es incorrecto',async()=>{
+            const response = await agent.get('/rickandmorty/login/?email=juan%40jua.com&password=juan123')
+            expect(response).toHaveProperty(['body','access'],false)
+        })
+    })
+
 })
