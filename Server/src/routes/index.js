@@ -13,4 +13,6 @@ router.delete('/fav/:id',deleteFav)
 
 
 
-module.exports = router
+module.exports = {
+    router
+}

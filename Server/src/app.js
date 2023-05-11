@@ -1,12 +1,11 @@
-const express = require ('express')
+const express = require('express')
 const server = express()
-const router = require('./routes/index')
+const { router } = require('./routes/index')
 const cors = require('cors')
 
 
 
 server.use(express.json())
-server.use('/rickandmorty', router)
 server.use(cors())
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -22,6 +21,9 @@ server.use((req, res, next) => {
     next();
 });
 
+server.use('/rickandmorty', router)
 
 
-module.exports = server
+module.exports = {
+    server
+}
