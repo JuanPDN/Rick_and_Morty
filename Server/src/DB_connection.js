@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
 const FavoriteModel = require('./models/Favorite.js')
@@ -9,7 +9,7 @@ const UserModel = require('./models/User.js')
 // Recuerda pasarle la información de tu archivo '.env'.
 
 //const URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`
-const URL = DB_DEPLOY
+const URL = 'postgres://postgres:kD8nCLaRqA1VIQcHcpba@containers.railway.app:6755/railway'
 
 const sequelize = new Sequelize(
    URL,
