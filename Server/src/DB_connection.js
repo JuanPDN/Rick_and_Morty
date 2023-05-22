@@ -9,8 +9,8 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
 // Recuerda pasarle la información de tu archivo '.env'.
 
 //const URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`
-//const URL = DB_DEPLOY
-const URL = 'postgres://postgres:kD8nCLaRqA1VIQcHcpba@containers.railway.app:6755/railway'
+const URL = DB_DEPLOY
+
 
 
 const sequelize = new Sequelize(
