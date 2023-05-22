@@ -24,7 +24,7 @@ function App() {
       }
       if ((characters.filter((character) => character.id === parseInt(id))).length === 0) {
          try {
-            const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+            const { data } = await axios(`/rickandmorty/character/${id}`)
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
             } else {
@@ -47,7 +47,7 @@ function App() {
    async  function login(userData) {
       try {
          const { email, password } = userData;
-         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const URL = 'https://rickandmorty-production-51e4.up.railway.app/rickandmorty/login/';
 
          const {data} = await axios(URL + `?email=${email}&password=${password}`)
          const { access } = data;
