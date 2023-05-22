@@ -9,7 +9,7 @@ const UserModel = require('./models/User.js')
 // Recuerda pasarle la información de tu archivo '.env'.
 
 //const URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`
-const URL = 'postgres://postgres:kD8nCLaRqA1VIQcHcpba@containers.railway.app:6755/railway'
+const URL = DB_USER
 
 const sequelize = new Sequelize(
    URL,
