@@ -3,7 +3,8 @@ import imgen from './images.jpeg'
 import './form.css'
 import Validate from './validation';
 
-function Form({ login }) {
+function Form({ login, register }) {
+
 
     const [userData, setUserData] = useState({
         email: '',
@@ -31,6 +32,11 @@ function Form({ login }) {
         login(userData)
     }
 
+    function handleRegister(event) {
+        event.preventDefault()
+        register(userData)
+    }
+
     return (
         <div className='container-form'>
             <form className="form">
@@ -46,7 +52,9 @@ function Form({ login }) {
                     <p className='errors'>{errors.pass}</p>
                 }
                 <button type='submit' className={Object.keys(errors).length === 0 ? 'btn-blue' :
-                    'btn-blue hide'} onClick={handleSubmit} >Submit</button>
+                    'btn-blue hide'} onClick={handleSubmit} >Login</button>
+                <button type='submit' className={Object.keys(errors).length === 0 ? 'btn-blue' :
+                    'btn-blue hide'} onClick={handleRegister} >Register</button>
 
             </form>
         </div>

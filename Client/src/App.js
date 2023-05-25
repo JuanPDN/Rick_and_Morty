@@ -59,6 +59,16 @@ function App() {
       }
 
    }
+   async function register (userData){
+      try {
+         const { email, password } = userData;
+         await axios.post('http://localhost:3001/rickandmorty/login',{email, password})
+         window.alert('Usuario creado correctamente')
+         
+      } catch (error) {
+         throw new Error(error)
+      }
+   }
 
    function logOut() {
       setAccess(false)
@@ -74,7 +84,7 @@ function App() {
       <div >
          {pathname !== '/' ? <Nav onSearch={onSearch} logOut={logOut} /> : null}
          <Routes>
-            <Route path='/' element={<Form login={login} />} />
+            <Route path='/' element={<Form login={login} register={register} />} />
             <Route path='/favorites' element={<Favorites />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
