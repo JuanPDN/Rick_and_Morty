@@ -55,6 +55,7 @@ function App() {
          access && navigate('/home');
 
       } catch (error) {
+         window.alert('usuario o contraseña errada')
          throw new Error(error)
       }
 
