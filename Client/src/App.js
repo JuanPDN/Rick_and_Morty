@@ -47,7 +47,7 @@ function App() {
    async  function login(userData) {
       try {
          const { email, password } = userData;
-         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const URL = '/rickandmorty/login/';
 
          const {data} = await axios(URL + `?email=${email}&password=${password}`)
          const { access } = data;
@@ -62,7 +62,7 @@ function App() {
    async function register (userData){
       try {
          const { email, password } = userData;
-         await axios.post('http://localhost:3001/rickandmorty/login',{email, password})
+         await axios.post('/rickandmorty/login',{email, password})
          window.alert('Usuario creado correctamente')
          
       } catch (error) {
